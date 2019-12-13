@@ -1,8 +1,20 @@
-<div class="container">
+<div class="container-fluid">
     <div class="header clearfix">
         <h3 class="float-left">Analytics</h3>
         <button type="button" class="btn btn-warning float-right" (click)="getAnalyticsInfo()">
             <span class="fa fa-refresh"></span> Refresh
         </button>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" style="display: block;">
+            <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+            </canvas>
+        </div>
     </div>
 </div>
