@@ -39,9 +39,7 @@
               "node_modules/@syncfusion/ej2-popups/styles/material.css",
               "node_modules/@syncfusion/ej2-richtexteditor/styles/material.css"
             ],
-            "scripts": [
-              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
-            ],
+            "scripts": [],
             "es5BrowserSupport": true
           },
           "configurations": {
