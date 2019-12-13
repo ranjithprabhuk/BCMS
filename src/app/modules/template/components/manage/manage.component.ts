@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { TemplateService } from '../../template.service';
 
 @Component({
   selector: 'app-template-manage',
@@ -7,9 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./manage.component.scss']
 })
 export class ManageTemplateComponent {
-  constructor(private router: Router){
-
-  }
+  constructor(private router: Router, private templateService: TemplateService){ }
   @ViewChild('valueTemplate') valueTemplate;
 
   public templateInfo: any = { name: '', value: ''};
@@ -27,7 +26,9 @@ export class ManageTemplateComponent {
   };
 
   public saveTemplate(): void {
-    console.log(this);
+    this.templateService.getTemplateById(this.templateInfo).subscribe((response) => {
+      console.log("responsee", response);
+    });
   }
 
   public getTemplateValue(template): void {
