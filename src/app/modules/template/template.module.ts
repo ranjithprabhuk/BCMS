@@ -41,8 +41,6 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
-    FroalaEditorModule.forRoot(),
-    FroalaViewModule.forRoot(),
     RichTextEditorModule
   ],
   providers: [TemplateService, ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, QuickToolbarService ],
