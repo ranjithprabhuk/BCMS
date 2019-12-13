@@ -3,6 +3,7 @@
         <h3 class="float-left">Templates</h3>
         <div class="col-md-3 float-left">
             <select class="form-control" placeholder="Select Category" [(ngModel)]="selectedCategory" (change)="onCategoryChange();">
+                <option disabled value="">Select Category</option>
                 <option *ngFor="let category of categories" [value]="category.id">
                     {{category.name}}
                 </option>

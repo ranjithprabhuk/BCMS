@@ -8,7 +8,7 @@ import { TemplateService } from '../../template.service';
   styleUrls: ['./template.component.scss']
 })
 export class TemplateComponent {
-  public categories: any[] = [];
+  public categories: any[] = [{id: '1', name: 'General', templateIds: ''}];
   public selectedCategory: string = '';
 
   constructor(private router: Router, private templateService: TemplateService) { }
@@ -16,8 +16,10 @@ export class TemplateComponent {
   ngOnInit(): void {
     this.templateService.getAllCategories().subscribe(category => {
       console.log("Categories >>", category);
-      this.categories = category;
-    })
+      if (category) {
+        this.categories = category;
+      }
+    });
   }
 
   public manageTemplate(id: string): void {
