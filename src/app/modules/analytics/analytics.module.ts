@@ -44,4 +44,4 @@ const routes: Routes = [
   ],
   providers: [AnalyticsService],
 })
-export class TemplateModule { }
+export class AnalyticsModule { }

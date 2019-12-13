@@ -21,6 +21,11 @@ const routes: Routes = [
     path: 'template',
     loadChildren: () => import(`./modules/template/template.module`)
       .then(mod => mod.TemplateModule)
+  },
+  {
+    path: 'analytics',
+    loadChildren: () => import(`./modules/analytics/analytics.module`)
+      .then(mod => mod.AnalyticsModule)
   }
 ];
 
