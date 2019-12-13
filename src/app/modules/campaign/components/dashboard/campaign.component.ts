@@ -17,6 +17,6 @@ export class CampaignComponent {
   }
 
   public manageTemplate(id: string): void {
-    this.router.navigateByUrl(`/template/manage/${id}`);
+    this.router.navigateByUrl(`/campaign/manage/${id}`);
   }
 }

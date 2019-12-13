@@ -47,4 +47,4 @@ const routes: Routes = [
   ],
   providers: [CampaignService],
 })
-export class TemplateModule { }
+export class CampaignModule { }

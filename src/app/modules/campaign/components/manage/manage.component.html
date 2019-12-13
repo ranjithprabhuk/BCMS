@@ -5,15 +5,7 @@
         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
     <div class="template-editor">
-        <ejs-richtexteditor
-            id='defaultRTE'
-            [inlineMode]='inlineMode'
-            [toolbarSettings]='tools'
-            [height]="editorHeight"
-            [value]="templateInfo.value"
-            (change)="getTemplateValue($event)"
-        >
-        </ejs-richtexteditor>
+
     </div>
     <div class="footer-buttons float-right">
         <button type="button" class="btn btn-danger" (click)="cancelTemplate()">
