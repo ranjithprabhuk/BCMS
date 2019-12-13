@@ -9,7 +9,7 @@ import { TemplateService } from '../../template.service';
 })
 export class TemplateComponent {
   public categories: any[] = [{id: '1', name: 'General', templateIds: ''}];
-  public templates: any[] = [{id: '1', name: 'General', templateIds: ''}, {id: '2', name: 'Birthday', templateIds: ''}]
+  public templates: any[] = [{templateId: '1', templateName: 'General', templateIds: ''}]
   public selectedCategory: string = '';
 
   constructor(private router: Router, private templateService: TemplateService) { }
