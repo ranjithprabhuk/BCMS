@@ -8,6 +8,8 @@ import { CampaignService } from '../../campaign.service';
   styleUrls: ['./manage.component.scss']
 })
 export class ManageCampaignComponent {
+  public campaignInfo: any = {};
+
   constructor(
     private router: Router,
     private campaignService: CampaignService,
@@ -28,7 +30,11 @@ export class ManageCampaignComponent {
     });
   }
 
-  public cancelTemplate(): void {
-    this.router.navigateByUrl('/template/dashboard');
+  public cancelCampaign(): void {
+    this.router.navigateByUrl('/campaign/dashboard');
+  }
+
+  public saveCampaign(): void {
+
   }
 }
