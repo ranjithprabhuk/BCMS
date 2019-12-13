@@ -8,15 +8,25 @@ import { TemplateService } from '../../template.service';
   styleUrls: ['./template.component.scss']
 })
 export class TemplateComponent {
+  public categories: any[] = [];
+  public selectedCategory: string = '';
+
   constructor(private router: Router, private templateService: TemplateService) { }
 
   ngOnInit(): void {
     this.templateService.getAllCategories().subscribe(category => {
       console.log("Categories >>", category);
+      this.categories = category;
     })
   }
 
   public manageTemplate(id: string): void {
     this.router.navigateByUrl(`/template/manage/${id}`);
+  }
+
+  public onCategoryChange(): void {
+    if (this.selectedCategory) {
+
+    }
   }
 }

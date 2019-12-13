@@ -1,6 +1,13 @@
 <div class="container">
     <div class="header clearfix">
         <h3 class="float-left">Templates</h3>
+        <div class="col-md-3 float-left">
+            <select class="form-control" placeholder="Select Category" [(ngModel)]="selectedCategory" (change)="onCategoryChange();">
+                <option *ngFor="let category of categories" [value]="category.id">
+                    {{category.name}}
+                </option>
+            </select>
+        </div>
         <button type="button" class="btn btn-warning float-right" (click)="manageTemplate('new')">
             <span class="fa fa-plus"></span> Create Template
         </button>
