@@ -59,7 +59,7 @@ export class ManageTemplateComponent {
   }
 
   public getTemplateValue(template): void {
-    this.templateInfo.value = template.value;
+    this.templateInfo.content = template.value;
   }
 
   public cancelTemplate(): void {
