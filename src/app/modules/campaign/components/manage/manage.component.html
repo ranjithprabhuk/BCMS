@@ -4,8 +4,36 @@
         <input type="text" class="form-control" id="template-name" [(ngModel)]="campaignInfo.name" placeholder="Enter the Template Name">
         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
-    <div class="template-editor">
-
+    <div class="form-group clearfix">
+        <label for="template-name">Select Target Group</label>
+        <ng-multiselect-dropdown
+            [placeholder]="'custom placeholder'"
+            [data]="dropdownList"
+            [(ngModel)]="selectedItems"
+            [settings]="dropdownSettings"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+        >
+        </ng-multiselect-dropdown>
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group clearfix">
+        <label for="template-name">Subject</label>
+        <input type="text" class="form-control" id="template-name" [(ngModel)]="campaignInfo.name" placeholder="Enter the Template Name">
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group clearfix">
+        <label for="template-name">Select Email Template</label>
+        <ng-multiselect-dropdown
+            [placeholder]="'custom placeholder'"
+            [data]="dropdownList"
+            [(ngModel)]="selectedItems"
+            [settings]="dropdownSettings"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+        >
+        </ng-multiselect-dropdown>
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
     <div class="footer-buttons float-right">
         <button type="button" class="btn btn-danger" (click)="cancelCampaign()">
