@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-template-manage',
@@ -6,6 +7,9 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./manage.component.scss']
 })
 export class ManageTemplateComponent {
+  constructor(private router: Router){
+
+  }
   @ViewChild('valueTemplate') valueTemplate;
 
   public templateInfo: any = { name: '', value: ''};
@@ -28,5 +32,9 @@ export class ManageTemplateComponent {
 
   public getTemplateValue(template): void {
     this.templateInfo.value = template.value;
+  }
+
+  public cancelTemplate(): void {
+    this.router.navigateByUrl('/template/dashboard');
   }
 }
