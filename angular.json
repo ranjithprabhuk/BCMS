@@ -28,9 +28,20 @@
             ],
             "styles": [
               "node_modules/font-awesome/css/font-awesome.css",
-              "./src/assets/scss/styles.scss"
+              "./src/assets/scss/styles.scss",
+              "node_modules/@syncfusion/ej2-base/styles/material.css",
+              "node_modules/@syncfusion/ej2-icons/styles/material.css",
+              "node_modules/@syncfusion/ej2-buttons/styles/material.css",
+              "node_modules/@syncfusion/ej2-splitbuttons/styles/material.css",
+              "node_modules/@syncfusion/ej2-inputs/styles/material.css",
+              "node_modules/@syncfusion/ej2-lists/styles/material.css",
+              "node_modules/@syncfusion/ej2-navigations/styles/material.css",
+              "node_modules/@syncfusion/ej2-popups/styles/material.css",
+              "node_modules/@syncfusion/ej2-richtexteditor/styles/material.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

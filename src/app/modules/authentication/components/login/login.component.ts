@@ -11,6 +11,6 @@ export class LoginComponent {
   }
 
   public login(): void {
-    this.router.navigateByUrl('/campaign');
+    this.router.navigateByUrl('/template');
   }
 }

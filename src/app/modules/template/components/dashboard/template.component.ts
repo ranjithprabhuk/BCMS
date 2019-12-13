@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-template',
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./template.component.scss']
 })
 export class TemplateComponent {
+  constructor(private router: Router) {
+  }
+
+  public manageTemplate(id: string): void {
+    this.router.navigateByUrl(`/template/manage/${id}`);
+  }
 }

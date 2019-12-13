@@ -1,14 +1,13 @@
-<app-header></app-header>
 <div class="container">
     <div class="header clearfix">
         <h3 class="float-left">Templates</h3>
-        <button type="button" class="btn btn-warning float-right">
+        <button type="button" class="btn btn-warning float-right" (click)="manageTemplate('new')">
             <span class="fa fa-plus"></span> Create Template
         </button>
     </div>
     <div class="template-container row">
         <div class="col-lg-4">
-            <div class="card text-white bg-primary mb-3">
+            <div class="card text-white bg-primary mb-3" (click)="manageTemplate('1')">
                 <div class="card-body">
                     <h4 class="card-title">Primary template</h4>
                     <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
