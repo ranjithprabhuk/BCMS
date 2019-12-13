@@ -28,7 +28,8 @@
             ],
             "styles": [
               "node_modules/font-awesome/css/font-awesome.css",
-              "./src/assets/scss/styles.scss"
+              "./src/assets/scss/styles.scss",
+              "node_modules/froala-editor/css/froala_editor.pkgd.min.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
