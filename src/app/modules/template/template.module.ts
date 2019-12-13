@@ -27,7 +27,11 @@ const routes: Routes = [
         component: TemplateComponent
       },
       {
-        path: 'manage/:id',
+        path: 'manage/:categoryId/:templateId',
+        component: ManageTemplateComponent
+      },
+      {
+        path: 'manage/:categoryId',
         component: ManageTemplateComponent
       }
     ]

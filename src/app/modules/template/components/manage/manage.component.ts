@@ -38,8 +38,8 @@ export class ManageTemplateComponent {
 
   ngOnInit(): void {
     const { params } = this.activatedRoute.snapshot;
-    if (params && params.id !== 'new') {
-      this.getTemplate(params.id);
+    if (params && params.categoryId !== 'new') {
+      this.getTemplate(params.categoryId, params.templateId);
     }
   }
 
@@ -52,9 +52,13 @@ export class ManageTemplateComponent {
     });
   }
 
-  public getTemplate(id: string): void {
-    this.templateService.getTemplateById(id).subscribe((response) => {
-      console.log("get responsee", response);
+  public getTemplate(categoryId: string, templateId: string): void {
+    this.templateService.getAllTemplates(categoryId).subscribe((categories) => {
+      const selectedTemplate = (categories || []).find(category => category && category.templateId == templateId);
+      if (selectedTemplate) {
+        this.templateInfo.content = selectedTemplate.template;
+        this.templateInfo.templateName = selectedTemplate.template;
+      }
     });
   }
 
