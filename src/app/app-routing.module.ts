@@ -16,6 +16,11 @@ const routes: Routes = [
     path: 'campaign',
     loadChildren: () => import(`./modules/campaign/campaign.module`)
       .then(mod => mod.CampaignModule)
+  },
+  {
+    path: 'template',
+    loadChildren: () => import(`./modules/template/template.module`)
+      .then(mod => mod.TemplateModule)
   }
 ];
 
