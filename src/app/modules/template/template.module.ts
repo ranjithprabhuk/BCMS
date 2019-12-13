@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
-import { TemplateComponent } from './components/campaign/template.component';
+import { TemplateComponent } from './components/dashboard/template.component';
 import { TemplateService } from './template.service';
 
 const routes: Routes = [
