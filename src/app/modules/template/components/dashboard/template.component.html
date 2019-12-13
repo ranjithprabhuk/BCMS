@@ -14,66 +14,10 @@
         </button>
     </div>
     <div class="template-container row">
-        <div class="col-lg-4">
-            <div class="card text-white bg-primary mb-3" (click)="manageTemplate('1')">
+        <div class="col-lg-4" *ngFor="let template of templates">
+            <div class="card text-white mb-3" [ngClass]="getClassName(template.id)" (click)="manageTemplate(template.id)">
                 <div class="card-body">
-                    <h4 class="card-title">Primary template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-secondary mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Secondary template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-success mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Success template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-danger mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Danger template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-warning mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Warning template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-info mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Info template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card bg-light mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Light template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-dark mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Dark template</h4>
+                    <h4 class="card-title">{{template.name}}</h4>
                     <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
                 </div>
             </div>

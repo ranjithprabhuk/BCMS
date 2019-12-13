@@ -12,8 +12,8 @@ export class TemplateService {
         return this.http.get(`${this.url}partner/categories`);
     }
 
-    getAllTemplates(): Observable<any> {
-        return this.http.get(`${this.url}partner/categories`);
+    getAllTemplates(categoryId: string): Observable<any> {
+        return this.http.get(`${this.url}partner/categories/templates/${categoryId}`);
     }
 
     getTemplateById(templateId: string): Observable<any> {
