@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
+import { RichTextEditorModule, ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, QuickToolbarService, MarkdownEditorService  } from '@syncfusion/ej2-angular-richtexteditor';
+
 import { TemplateComponent } from './components/dashboard/template.component';
 import { TemplateService } from './template.service';
 import { TemplateContainer } from './container/template.container';
@@ -38,8 +40,11 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
+    RichTextEditorModule
   ],
-  providers: [TemplateService]
+  providers: [TemplateService, ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, QuickToolbarService ],
 })
 export class TemplateModule { }
