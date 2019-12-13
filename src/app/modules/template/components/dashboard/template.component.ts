@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TemplateService } from '../../template.service';
 
 @Component({
   selector: 'app-template',
@@ -7,7 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./template.component.scss']
 })
 export class TemplateComponent {
-  constructor(private router: Router) {
+  constructor(private router: Router, private templateService: TemplateService) { }
+
+  ngOnInit(): void {
+    this.templateService.getAllCategories().subscribe(category => {
+      console.log("Categories >>", category);
+    })
   }
 
   public manageTemplate(id: string): void {
