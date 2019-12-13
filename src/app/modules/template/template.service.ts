@@ -6,10 +6,14 @@ import { Observable } from 'rxjs';
 export class TemplateService {
     constructor(private http: HttpClient) { }
 
-    private url: string = 'http://localhost:8080/'
+    private url: string = 'http://localhost:8080/';
+
+    getAllCategories(): Observable<any> {
+        return this.http.get(`${this.url}partner/categories`);
+    }
 
     getAllTemplates(): Observable<any> {
-        return this.http.get(`${this.url}fetch`);
+        return this.http.get(`${this.url}partner/categories`);
     }
 
     getTemplateById(templateId: string): Observable<any> {
