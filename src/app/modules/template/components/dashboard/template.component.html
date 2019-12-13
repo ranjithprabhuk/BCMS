@@ -15,9 +15,9 @@
     </div>
     <div class="template-container row">
         <div class="col-lg-4" *ngFor="let template of templates">
-            <div class="card text-white mb-3" [ngClass]="getClassName(template.id)" (click)="manageTemplate(template.id)">
+            <div class="card text-white mb-3" [ngClass]="getClassName(template.templateId)" (click)="manageTemplate(template.templateId)">
                 <div class="card-body">
-                    <h4 class="card-title">{{template.name}}</h4>
+                    <h4 class="card-title">{{template.templateName}}</h4>
                     <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
                 </div>
             </div>
