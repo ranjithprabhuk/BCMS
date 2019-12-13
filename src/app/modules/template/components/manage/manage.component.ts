@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { TemplateService } from '../../template.service';
 
 @Component({
@@ -8,7 +8,11 @@ import { TemplateService } from '../../template.service';
   styleUrls: ['./manage.component.scss']
 })
 export class ManageTemplateComponent {
-  constructor(private router: Router, private templateService: TemplateService){ }
+  constructor(
+    private router: Router,
+    private templateService: TemplateService,
+    private activatedRoute: ActivatedRoute,
+  ){ }
   @ViewChild('valueTemplate') valueTemplate;
 
   public templateInfo: any = { name: '', value: ''};
@@ -25,9 +29,22 @@ export class ManageTemplateComponent {
       'Image', '|', 'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen', 'CreateTable']
   };
 
+  ngOnInit(): void {
+    const { params } = this.activatedRoute.snapshot;
+    if (params && params.id !== 'new') {
+      this.getTemplate(params.id);
+    }
+  }
+
   public saveTemplate(): void {
-    this.templateService.getTemplateById(this.templateInfo).subscribe((response) => {
-      console.log("responsee", response);
+    this.templateService.saveTemplate(this.templateInfo).subscribe((response) => {
+      console.log("save responsee", response);
+    });
+  }
+
+  public getTemplate(id: string): void {
+    this.templateService.getTemplateById(id).subscribe((response) => {
+      console.log("get responsee", response);
     });
   }
 

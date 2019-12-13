@@ -17,6 +17,6 @@ export class TemplateService {
     }
 
     saveTemplate(templateInfo): Observable<any> {
-        return this.http.post(`${this.url}fetch`, templateInfo);
+        return this.http.post(`${this.url}fetch`, JSON.stringify(templateInfo));
     }
 }
