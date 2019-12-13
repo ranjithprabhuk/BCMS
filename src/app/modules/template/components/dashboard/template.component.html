@@ -1,71 +1,23 @@
 <div class="container">
     <div class="header clearfix">
         <h3 class="float-left">Templates</h3>
+        <div class="col-md-3 float-left">
+            <select class="form-control" placeholder="Select Category" [(ngModel)]="selectedCategory" (change)="onCategoryChange();">
+                <option disabled value="">Select Category</option>
+                <option *ngFor="let category of categories" [value]="category.id">
+                    {{category.name}}
+                </option>
+            </select>
+        </div>
         <button type="button" class="btn btn-warning float-right" (click)="manageTemplate('new')">
             <span class="fa fa-plus"></span> Create Template
         </button>
     </div>
     <div class="template-container row">
-        <div class="col-lg-4">
-            <div class="card text-white bg-primary mb-3" (click)="manageTemplate('1')">
+        <div class="col-lg-4" *ngFor="let template of templates">
+            <div class="card text-white mb-3" [ngClass]="getClassName(template.id)" (click)="manageTemplate(template.id)">
                 <div class="card-body">
-                    <h4 class="card-title">Primary template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-secondary mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Secondary template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-success mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Success template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-danger mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Danger template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-warning mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Warning template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-info mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Info template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card bg-light mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Light template</h4>
-                    <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-white bg-dark mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Dark template</h4>
+                    <h4 class="card-title">{{template.name}}</h4>
                     <p class="card-text">Some quick example text to build on the template and make up the bulk of the card's content.</p>
                 </div>
             </div>
