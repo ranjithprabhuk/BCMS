@@ -1,26 +1,50 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CampaignService } from './campaign.service';
-import { CampaignComponent } from './components/campaign/campaign.component';
+import { FormsModule } from '@angular/forms';
+
 import { SharedModule } from '../../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CampaignContainer } from './container/campaign.container';
+import { CampaignComponent } from './components/dashboard/campaign.component';
+import { ManageCampaignComponent } from './components/manage/manage.component';
+import { CampaignService } from './campaign.service';
 
 const routes: Routes = [
   {
     path: '',
-    component: CampaignComponent
+    component: CampaignContainer,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'dashboard'
+      },
+      {
+        path: 'dashboard',
+        component: CampaignComponent
+      },
+      {
+        path: 'manage/:id',
+        component: ManageCampaignComponent
+      }
+    ]
   }
 ];
 
 @NgModule({
   declarations: [
-    CampaignComponent
+    CampaignContainer,
+    CampaignComponent,
+    ManageCampaignComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [CampaignService]
+  providers: [CampaignService],
 })
-export class CampaignModule { }
+export class TemplateModule { }
