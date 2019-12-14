@@ -14,8 +14,8 @@ export class ManageTemplateComponent {
     name: 'Template Name',
     subject: 'Subject',
     content: 'UI template content',
-    toListContacts: ['email@sdsd.com'],
-    toListAlias: ['developer']
+    toListContacts: 'email@sdsd.com',
+    toListAlias: 'developer'
   };
   public editorHeight: number = window.innerHeight - 240;
   public inlineMode: object = { enable: false, onSelection: true };
