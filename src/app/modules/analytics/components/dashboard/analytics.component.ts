@@ -60,7 +60,7 @@ export class AnalyticsComponent {
   }
 
   getAnalyticsInfo(): void {
-    this.analyticsService.getAnalyticsInfo().subscribe(analytics => {
+    this.analyticsService.getAnalyticsInfo().then(analytics => {
       console.log("Analytics >>", analytics);
       this.barChartLabels = [];
       (analytics || []).forEach((data) => {
