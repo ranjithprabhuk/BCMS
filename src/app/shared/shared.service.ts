@@ -10,6 +10,7 @@ export class SharedService {
     constructor() {}
     show() {
         this.loaderSubject.next({ show: true });
+        setTimeout(() => this.loaderSubject.next({show: false}), 3000);
     }
     hide() {
         this.loaderSubject.next(<LoaderState>{ show: false });
