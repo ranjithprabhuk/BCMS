@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { SharedService } from './shared.service';
@@ -12,7 +14,8 @@ import { LoaderComponent } from './components/loader/loader.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    CollapseModule.forRoot(),
   ],
   providers: [SharedService],
   exports: [
