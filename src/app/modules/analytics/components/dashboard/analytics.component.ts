@@ -67,11 +67,13 @@ export class AnalyticsComponent {
         this.barChartLabels.push(data.date);
         this.barChartData[0].data = [];
         this.barChartData[1].data = [];
-        (data.stats || []).forEach((stat: any) => {
+        (data.stats || []).forEach((stat: any, index: number) => {
           if (stat && stat.metrics) {
             this.barChartData[0].data.push(stat.metrics.deliverd);
             this.barChartData[1].data.push(stat.metrics.opens);
-            this.mailStatus = stat.metrics;
+            if (index === 0) {
+              this.mailStatus = stat.metrics;
+            }
           }
         });
       })
