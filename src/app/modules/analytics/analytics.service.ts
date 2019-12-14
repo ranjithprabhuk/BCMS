@@ -9,6 +9,6 @@ export class AnalyticsService {
     private url: string = 'http://localhost:8002/';
 
     getAnalyticsInfo(): Observable<any> {
-        return this.http.get(`${this.url}campaign/analytics/`);
+        return this.http.get(`${this.url}campaign/analytics?fromDate=2019-12-13`);
     }
 }
