@@ -9,8 +9,8 @@
         <div class="col-lg-3">
             <div class="card text-white bg-primary mb-3">
             <div class="card-body">
-                <h4 class="card-title">120</h4>
-                <p class="card-text">Total Mails</p>
+                <h4 class="card-title">{{mailStatus.delivered}}</h4>
+                <p class="card-text">Delivered</p>
             </div>
             <div class="card-body">
                 <span class="fa fa-envelope fa-4x"></span>
@@ -20,7 +20,7 @@
         <div class="col-lg-3">
             <div class="card text-white bg-success mb-3">
             <div class="card-body">
-                <h4 class="card-title">120</h4>
+                <h4 class="card-title">{{mailStatus.opens}}</h4>
                 <p class="card-text">Mails Opened</p>
             </div>
             <div class="card-body">
@@ -31,7 +31,7 @@
         <div class="col-lg-3">
             <div class="card text-white bg-warning mb-3">
             <div class="card-body">
-                <h4 class="card-title">120</h4>
+                <h4 class="card-title">{{mailStatus.clicks}}</h4>
                 <p class="card-text">Links Clicked</p>
             </div>
             <div class="card-body">
@@ -42,7 +42,7 @@
         <div class="col-lg-3">
             <div class="card text-white bg-info mb-3">
             <div class="card-body">
-                <h4 class="card-title">120</h4>
+                <h4 class="card-title">{{mailStatus.invalid_emails}}</h4>
                 <p class="card-text">Invalid Emails</p>
             </div>
             <div class="card-body">

@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
 export class AnalyticsService {
     constructor(private http: HttpClient) { }
 
-    private url: string = 'http://localhost:8080/';
+    private url: string = 'http://localhost:8002/';
 
     getAnalyticsInfo(): Observable<any> {
-        return this.http.get(`${this.url}analytics/categories`);
+        return this.http.get(`${this.url}campaign/analytics/`);
     }
 }
