@@ -6,15 +6,67 @@
         </button>
     </div>
     <div class="row">
-        <div class="col-xs-12" style="display: block;">
-            <canvas baseChart
-                [datasets]="barChartData"
-                [labels]="barChartLabels"
-                [options]="barChartOptions"
-                [plugins]="barChartPlugins"
-                [legend]="barChartLegend"
-                [chartType]="barChartType">
-            </canvas>
+        <div class="col-lg-3">
+            <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h4 class="card-title">120</h4>
+                <p class="card-text">Total Mails</p>
+            </div>
+            <div class="card-body">
+                <span class="fa fa-envelope fa-4x"></span>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h4 class="card-title">120</h4>
+                <p class="card-text">Mails Opened</p>
+            </div>
+            <div class="card-body">
+                <span class="fa fa-envelope-open fa-4x"></span>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card text-white bg-warning mb-3">
+            <div class="card-body">
+                <h4 class="card-title">120</h4>
+                <p class="card-text">Links Clicked</p>
+            </div>
+            <div class="card-body">
+                <span class="fa fa-hand-pointer-o fa-4x"></span>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card text-white bg-info mb-3">
+            <div class="card-body">
+                <h4 class="card-title">120</h4>
+                <p class="card-text">Invalid Emails</p>
+            </div>
+            <div class="card-body">
+                <span class="fa fa-ban fa-4x"></span>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card border-primary">
+                <div class="card-body">
+                    <canvas baseChart
+                        [datasets]="barChartData"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [plugins]="barChartPlugins"
+                        [legend]="barChartLegend"
+                        [chartType]="barChartType"
+                        [colors]="lineChartColors"
+                    >
+                    </canvas>
+                </div>
+            </div>
         </div>
     </div>
 </div>
