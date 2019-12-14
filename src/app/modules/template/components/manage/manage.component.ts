@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TemplateService } from '../../template.service';
+import { SharedService } from '../../../../shared/shared.service';
 
 @Component({
   selector: 'app-template-manage',
@@ -33,6 +34,7 @@ export class ManageTemplateComponent {
     private router: Router,
     private templateService: TemplateService,
     private activatedRoute: ActivatedRoute,
+    private sharedService: SharedService
   ) { }
 
 
@@ -48,6 +50,7 @@ export class ManageTemplateComponent {
       console.log("save responsee", response);
       if (response) {
         this.router.navigateByUrl('/template/dashboard');
+        this.sharedService.alertMessage(`Successfully saved the template: ${response.id}`);
       }
     });
   }

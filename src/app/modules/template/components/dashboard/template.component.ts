@@ -21,6 +21,7 @@ export class TemplateComponent {
       if (category) {
         this.categories = category;
         this.sharedService.hide();
+        this.sharedService.alertMessage('Successfully fetched all the categories');
       }
     });
   }
@@ -35,6 +36,7 @@ export class TemplateComponent {
         if (templates) {
           this.templates = templates;
           this.sharedService.hide();
+          this.sharedService.alertMessage('Successfully fetched all the templates');
         }
       });
     }
