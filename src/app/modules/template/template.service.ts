@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SharedService } from '../../shared/shared.service';
 
@@ -26,6 +26,11 @@ export class TemplateService {
 
     saveTemplate(templateInfo): Observable<any> {
         this.sharedService.show();
-        return this.http.post(`${this.url}partner/templates/add`, JSON.stringify(templateInfo));
+        const headers = new HttpHeaders();
+        const body = JSON.stringify(templateInfo);
+
+
+        headers.append("Content-Type", "application/json");
+        return this.http.post(`${this.url}partner/templates/add`, body, {headers: headers});
     }
 }
