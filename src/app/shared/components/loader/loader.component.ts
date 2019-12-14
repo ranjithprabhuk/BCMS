@@ -3,9 +3,9 @@ import { Subscription } from 'rxjs';
 import { SharedService, LoaderState } from '../../shared.service';
 
 @Component({
-    selector: 'angular-loader',
+    selector: 'app-loader',
     templateUrl: './loader.component.html',
-    styleUrls: ['./loader.component.css']
+    styleUrls: ['./loader.component.scss']
 })
 export class LoaderComponent implements OnInit {
     show = false;

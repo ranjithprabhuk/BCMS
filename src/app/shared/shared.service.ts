@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
-export interface LoaderState {
-    show: boolean;
-}
-
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class SharedService {
-    private loaderSubject = new Subject<LoaderState>();
+    private loaderSubject = new BehaviorSubject<LoaderState>({show: false});
     loaderState = this.loaderSubject.asObservable();
-    constructor() { }
+    constructor() {}
     show() {
-        this.loaderSubject.next(<LoaderState>{ show: true });
+        this.loaderSubject.next({ show: true });
     }
     hide() {
         this.loaderSubject.next(<LoaderState>{ show: false });
     }
+}
+
+export interface LoaderState {
+    show: boolean;
 }
