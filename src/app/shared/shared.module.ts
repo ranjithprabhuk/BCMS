@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { SharedService } from './shared.service';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
@@ -14,7 +16,8 @@ import { SharedService } from './shared.service';
   ],
   providers: [SharedService],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    LoaderComponent
   ]
 })
 export class SharedModule { }

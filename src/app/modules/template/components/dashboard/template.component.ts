@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TemplateService } from '../../template.service';
+import { SharedService } from '../../../../shared/shared.service';
 
 @Component({
   selector: 'app-template',
@@ -12,13 +13,14 @@ export class TemplateComponent {
   public templates: any[] = [{templateId: '1', templateName: 'General', templateIds: ''}]
   public selectedCategory: string = '';
 
-  constructor(private router: Router, private templateService: TemplateService) { }
+  constructor(private router: Router, private templateService: TemplateService, private sharedService: SharedService) { }
 
   ngOnInit(): void {
     this.templateService.getAllCategories().subscribe(category => {
       console.log("Categories >>", category);
       if (category) {
         this.categories = category;
+        this.sharedService.hide();
       }
     });
   }
@@ -32,6 +34,7 @@ export class TemplateComponent {
       this.templateService.getAllTemplates(this.selectedCategory).subscribe(templates => {
         if (templates) {
           this.templates = templates;
+          this.sharedService.hide();
         }
       });
     }

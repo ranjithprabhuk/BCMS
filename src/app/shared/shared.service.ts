@@ -1,32 +1,22 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class SharedService {
-    private uploadedFile = new BehaviorSubject(null);
-    public currentFile = this.uploadedFile.asObservable();
-    private focus = new BehaviorSubject(null);
-    public currentFocus = this.focus.asObservable();
-
-    constructor() { }
-
-    public updateFile(file: Uint8Array) {
-        this.uploadedFile.next(file);
+    private loaderSubject = new BehaviorSubject<LoaderState>({show: false});
+    loaderState = this.loaderSubject.asObservable();
+    constructor() {}
+    show() {
+        this.loaderSubject.next({ show: true });
+        setTimeout(() => this.loaderSubject.next({show: false}), 3000);
     }
-
-    public setCurrentFocus(control) {
-        this.focus.next(control);
+    hide() {
+        this.loaderSubject.next(<LoaderState>{ show: false });
     }
+}
 
-    public downloadFormData(data) {
-        const formdata = JSON.stringify(data);
-        const element = document.createElement('a');
-        element.setAttribute('href', 'data:text/json;charset=UTF-8,' + encodeURIComponent(formdata));
-        element.setAttribute('download', 'form-data.json');
-        element.style.display = 'none';
-        document.body.appendChild(element);
-        element.click(); // simulate click
-        document.body.removeChild(element);
-    }
-
+export interface LoaderState {
+    show: boolean;
 }

@@ -1,5 +1,11 @@
-.container {
+.container-fluid {
     .header {
         margin-top: 1rem;
+    }
+    .card {
+        flex-direction: row;
+        .card-body:first-child {
+            padding-right: 0px;
+        }
     }
 }
