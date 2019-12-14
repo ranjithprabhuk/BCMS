@@ -10,7 +10,7 @@ import { SharedService } from '../../../../shared/shared.service';
 })
 export class ManageTemplateComponent {
   public templateInfo: any = {
-    userdId: 1234,
+    userId: 1234,
     name: 'Template Name',
     subject: 'Subject',
     content: 'UI template content',

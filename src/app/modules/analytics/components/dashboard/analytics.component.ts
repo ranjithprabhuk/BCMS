@@ -18,10 +18,11 @@ export class AnalyticsComponent {
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [];
+  public mailStatus = {clicks: 0, delivered: 0, invalid_emails: 0, opens: 0};
 
-  public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Total Mails' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Mails Opened' },
+  public barChartData: any[] = [
+    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Delivered' },
+    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Opened' },
     // { data: [23, 56, 23, 10, 71, 12, 20], label: 'Links Clicked' },
   ];
 
@@ -59,8 +60,21 @@ export class AnalyticsComponent {
   }
 
   getAnalyticsInfo(): void {
-    this.analyticsService.getAnalyticsInfo().subscribe(category => {
-      console.log("Analytics >>", category);
+    this.analyticsService.getAnalyticsInfo().subscribe(analytics => {
+      console.log("Analytics >>", analytics);
+      this.barChartLabels = [];
+      (analytics || []).forEach((data) => {
+        this.barChartLabels.push(data.date);
+        this.barChartData[0].data = [];
+        this.barChartData[1].data = [];
+        (data.stats || []).forEach((stat: any) => {
+          if (stat && stat.metrics) {
+            this.barChartData[0].data.push(stat.metrics.deliverd);
+            this.barChartData[1].data.push(stat.metrics.opens);
+            this.mailStatus = stat.metrics;
+          }
+        });
+      })
     })
   }
 }
