@@ -7,6 +7,10 @@ import { BehaviorSubject } from 'rxjs';
 export class SharedService {
     private loaderSubject = new BehaviorSubject<LoaderState>({show: false});
     loaderState = this.loaderSubject.asObservable();
+
+    private alertSubject = new BehaviorSubject<AlertState>({message: ''});
+    alertState = this.alertSubject.asObservable();
+
     constructor() {}
     show() {
         this.loaderSubject.next({ show: true });
@@ -15,8 +19,16 @@ export class SharedService {
     hide() {
         this.loaderSubject.next(<LoaderState>{ show: false });
     }
+
+    alertMessage(message: string): void {
+        this.alertSubject.next({message});
+    }
 }
 
 export interface LoaderState {
     show: boolean;
+}
+
+export interface AlertState {
+    message: string;
 }
