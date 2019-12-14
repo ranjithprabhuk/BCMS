@@ -4,5 +4,11 @@
     .card {
         box-shadow: 1px 1px 1px #eee;
         width: 550px;
+
+        .input-group-prepend {
+            width: 37px;
+            height: 33px;
+            margin-top: 1px;
+        }
     }
 }
