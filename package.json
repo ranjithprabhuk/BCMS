@@ -21,7 +21,7 @@
     "@angular/router": "~7.2.0",
     "@syncfusion/ej2-angular-richtexteditor": "^17.3.29",
     "bootstrap": "^4.3.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "core-js": "^2.5.4",
     "ejs": "^2.6.1",
     "express": "^4.17.1",
