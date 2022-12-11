@@ -24,7 +24,7 @@
     "chart.js": "^2.9.3",
     "core-js": "^2.5.4",
     "ejs": "^2.6.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "font-awesome": "^4.7.0",
     "ng-multiselect-dropdown": "^0.2.10",
     "ng2-charts": "^2.2.3",
